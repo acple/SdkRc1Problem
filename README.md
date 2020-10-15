@@ -50,3 +50,11 @@ Step 5/5 : RUN dotnet test
 /UnitTest/UnitTest1.cs(1,7): error CS0246: The type or namespace name 'ClassLibrary1' could not be found (are you missing a using directive or an assembly reference?) [/UnitTest/UnitTest.csproj]
 The command '/bin/sh -c dotnet test' returned a non-zero code: 1
 ```
+
+---
+
+This works fine on .NET 5 SDK preview.8.
+
+```console
+❯ docker build --pull . --build-arg SDK_VERSION=preview.8
+```
