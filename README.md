@@ -10,9 +10,9 @@ Digest: sha256:ef61bb9a85886c443d9f82b45909a374a546cec9c6a61b7ff5ea62d21cfec11f
 Status: Image is up to date for mcr.microsoft.com/dotnet/sdk:5.0.100-rc.2-alpine3.12
  ---> c3910a79cf33
 Step 3/5 : COPY . .
- ---> 2514f97a181a
+ ---> 547c7351a4a2
 Step 4/5 : RUN dotnet --info
- ---> Running in 2d9affe1239d
+ ---> Running in ea27af3d5604
 .NET SDK (reflecting any global.json):
  Version:   5.0.100-rc.2.20479.15
  Commit:    da7dfa8840
@@ -37,16 +37,16 @@ Host (useful for support):
 
 To install additional .NET runtimes or SDKs:
   https://aka.ms/dotnet-download
-Removing intermediate container 2d9affe1239d
- ---> 2e7663d881fb
+Removing intermediate container ea27af3d5604
+ ---> c0b6696ad717
 Step 5/5 : RUN dotnet test
- ---> Running in c30185d95f1f
+ ---> Running in f02e54ecedba
   Determining projects to restore...
-  Restored /ClassLibrary1/ClassLibrary1.csproj (in 5.65 sec).
-  Restored /SdkRc1Problem/SdkRc1Problem.csproj (in 21.15 sec).
+  Restored /ClassLibrary1/ClassLibrary1.csproj (in 3.98 sec).
+  Restored /UnitTest/UnitTest.csproj (in 22.1 sec).
   You are using a preview version of .NET. See: https://aka.ms/dotnet-core-preview
   You are using a preview version of .NET. See: https://aka.ms/dotnet-core-preview
   ClassLibrary1 -> /ClassLibrary1/bin/Debug/netstandard2.0/ClassLibrary1.dll
-/SdkRc1Problem/UnitTest1.cs(1,7): error CS0246: The type or namespace name 'ClassLibrary1' could not be found (are you missing a using directive or an assembly reference?) [/SdkRc1Problem/SdkRc1Problem.csproj]
+/UnitTest/UnitTest1.cs(1,7): error CS0246: The type or namespace name 'ClassLibrary1' could not be found (are you missing a using directive or an assembly reference?) [/UnitTest/UnitTest.csproj]
 The command '/bin/sh -c dotnet test' returned a non-zero code: 1
 ```

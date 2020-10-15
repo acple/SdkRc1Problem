@@ -9,8 +9,7 @@ namespace SdkRc1Problem
         [TestMethod]
         public void TestMethod1()
         {
-            var class1 = new Class1();
-            class1.Method1();
+            _ = new Class1();
         }
     }
 }
