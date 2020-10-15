@@ -1,49 +1,49 @@
 # SdkRc1Problem
 
 ```console
-❯ docker build --pull .
-Sending build context to Docker daemon  264.2kB
-Step 1/4 : FROM mcr.microsoft.com/dotnet/sdk:5.0.100-rc.1-alpine3.12
-5.0.100-rc.1-alpine3.12: Pulling from dotnet/sdk
-Digest: sha256:8cbe364ac8e368268da8b6fbff5010ee43b4ab6a14422e3b75cedd03e3c45b50
-Status: Image is up to date for mcr.microsoft.com/dotnet/sdk:5.0.100-rc.1-alpine3.12
- ---> ad37049370b0
-Step 2/4 : COPY . .
- ---> 24f3c13907ba
-  1 FROM mcr.microsoft.com/dotnet/sdk:5.0.100-rc.2-alpine3.12
-Step 3/4 : RUN dotnet --info
- ---> Running in 6e6f0e5e7b95
+❯ docker build --pull . --build-arg SDK_VERSION=rc.2
+Sending build context to Docker daemon  264.7kB
+Step 1/5 : ARG SDK_VERSION=rc.1
+Step 2/5 : FROM mcr.microsoft.com/dotnet/sdk:5.0.100-${SDK_VERSION}-alpine3.12
+5.0.100-rc.2-alpine3.12: Pulling from dotnet/sdk
+Digest: sha256:ef61bb9a85886c443d9f82b45909a374a546cec9c6a61b7ff5ea62d21cfec11f
+Status: Image is up to date for mcr.microsoft.com/dotnet/sdk:5.0.100-rc.2-alpine3.12
+ ---> c3910a79cf33
+Step 3/5 : COPY . .
+ ---> 2514f97a181a
+Step 4/5 : RUN dotnet --info
+ ---> Running in 2d9affe1239d
 .NET SDK (reflecting any global.json):
- Version:   5.0.100-rc.1.20452.10
- Commit:    473d1b592e
+ Version:   5.0.100-rc.2.20479.15
+ Commit:    da7dfa8840
 
 Runtime Environment:
  OS Name:     alpine
  OS Version:  3.12
  OS Platform: Linux
  RID:         alpine.3.12-x64
- Base Path:   /usr/share/dotnet/sdk/5.0.100-rc.1.20452.10/
+ Base Path:   /usr/share/dotnet/sdk/5.0.100-rc.2.20479.15/
 
 Host (useful for support):
-  Version: 5.0.0-rc.1.20451.14
-  Commit:  38017c3935
+  Version: 5.0.0-rc.2.20475.5
+  Commit:  c5a3f49c88
 
 .NET SDKs installed:
-  5.0.100-rc.1.20452.10 [/usr/share/dotnet/sdk]
+  5.0.100-rc.2.20479.15 [/usr/share/dotnet/sdk]
 
 .NET runtimes installed:
-  Microsoft.AspNetCore.App 5.0.0-rc.1.20451.17 [/usr/share/dotnet/shared/Microsoft.AspNetCore.App]
-  Microsoft.NETCore.App 5.0.0-rc.1.20451.14 [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  Microsoft.AspNetCore.App 5.0.0-rc.2.20475.17 [/usr/share/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 5.0.0-rc.2.20475.5 [/usr/share/dotnet/shared/Microsoft.NETCore.App]
 
 To install additional .NET runtimes or SDKs:
   https://aka.ms/dotnet-download
-Removing intermediate container 6e6f0e5e7b95
- ---> 727a8379da03
-Step 4/4 : RUN dotnet test
- ---> Running in 963f7bd7af95
+Removing intermediate container 2d9affe1239d
+ ---> 2e7663d881fb
+Step 5/5 : RUN dotnet test
+ ---> Running in c30185d95f1f
   Determining projects to restore...
-  Restored /ClassLibrary1/ClassLibrary1.csproj (in 5.83 sec).
-  Restored /SdkRc1Problem/SdkRc1Problem.csproj (in 21.97 sec).
+  Restored /ClassLibrary1/ClassLibrary1.csproj (in 5.65 sec).
+  Restored /SdkRc1Problem/SdkRc1Problem.csproj (in 21.15 sec).
   You are using a preview version of .NET. See: https://aka.ms/dotnet-core-preview
   You are using a preview version of .NET. See: https://aka.ms/dotnet-core-preview
   ClassLibrary1 -> /ClassLibrary1/bin/Debug/netstandard2.0/ClassLibrary1.dll
